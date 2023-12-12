@@ -1,59 +1,68 @@
-*, *::before, *::after {
-    box-sizing: border-box;  
-    font-family: Cambria, Cochin, sans-serif;
-    font-weight: normal;
-}
-
 body {
-    padding: 0;
-    margin: 0;
-    background: linear-gradient(to right, #0400ff, #00FF6C);
-}
-
-.calculator-grid {
-    display: grid;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    align-content: center;
-    min-height: 100vh;
-    grid-template-columns: repeat(4, 100px);
-    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+    height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #3498db, #2c3e50);
 }
 
-.calculator-grid > button {
-    cursor: pointer; 
-    font-size: 2rem;
-    border: 1px solid white;
-    outline: none;
-    background-color: rgba(255, 255, 255, 0.75); 
-
-}
-
-.calculator-grid > button:hover {
-    background-color: rgba(255, 255, 255, 0.9); 
-}
-.span-two {
-    grid-column: span 2;
-}
-
-.output {
-    grid-column: 1 / -1;
-    background-color: rgba(0, 0, 0, 0.75);
-    align-items: flex-end;
-    justify-content: space-between;
+.calculator {
+    background-color: #333;
+    border-radius: 10px;
+    box-shadow: 8px 10px 18px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    display: flex;
     flex-direction: column;
-    padding: 10px;
-    word-wrap: break-word;
-    word-break: break-all;
-
-}
-.output .previous-operand {
-    color: rgba(255, 255, 255, 0.75);
-    font-size: 1.5rem;;
+    align-items: center;
 }
 
-.output .current-operand {
-    color: white;
-    font-size: 1.5rem;;
+#result {
+    width: 100%;
+    padding: 20px;
+    font-size: 1.5em;
+    text-align: right;
+    border: none;
+    outline: none;
+    background-color: #444;
+    color: #fff;
 }
 
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+}
 
+button {
+    width: 100%;
+    padding: 20px;
+    font-size: 1.2em;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+.operator {
+    background-color: #ff9500;
+    grid-column: span 2;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.double {
+    background-color: #ff9500;
+    grid-column: span 2;
+    font-size: 1.2em;
+}
+.dot{
+    grid-column: span 2;
+    font-size: 1.2em;
+
+}
